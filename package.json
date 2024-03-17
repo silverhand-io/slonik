@@ -4,10 +4,10 @@
   "type": "module",
   "main": "./dist/src/index.js",
   "description": "A Node.js PostgreSQL client with strict types, detailed logging and assertions.",
-  "version": "31.0.0-beta.0",
+  "version": "31.0.0-beta.2",
   "files": [
-    "./src",
-    "./dist"
+    "./dist",
+    "!./dist/test"
   ],
   "repository": {
     "type": "git",
