@@ -1,3 +1,9 @@
+name: Lint, build and release
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -105,8 +111,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-name: Lint, build and release
-on:
-  push:
-    branches:
-      - main
