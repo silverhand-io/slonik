@@ -1101,4 +1101,27 @@ export const createIntegrationTests = (
 
     t.true(error instanceof InvalidInputError);
   });
+
+  test('command line options are passed to the underlying connection', async (t) => {
+    const options = encodeURIComponent('-c search_path=test_schema');
+    const pool = await createPool(t.context.dsn + '?options=' + options, {
+      PgPool,
+    });
+
+    await pool.query(sql`
+      CREATE SCHEMA test_schema;
+    `);
+
+    // The table should be created within test_schema due to the search_path option.
+    await pool.query(sql`
+      CREATE TABLE test_table (id SERIAL PRIMARY KEY);
+    `);
+
+    // The table we created will be the only one in the test_schema.
+    const tableName = await pool.oneFirst(sql`
+      SELECT table_name FROM information_schema.tables WHERE table_schema = 'test_schema'
+    `);
+
+    t.is(tableName, 'test_table');
+  });
 };

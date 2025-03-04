@@ -30,6 +30,7 @@ export type ConnectionOptions = {
   host?: string,
   password?: string,
   port?: number,
+  options?: string,
   sslMode?: 'disable' | 'no-verify' | 'require',
   username?: string,
 };

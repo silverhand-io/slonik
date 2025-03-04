@@ -31,6 +31,10 @@ test('postgresql://foo:bar@localhost', testParse, {
   password: 'bar',
   username: 'foo',
 });
+test('postgresql://localhost/?options=-c%20search_path%3Dfoo', testParse, {
+  host: 'localhost',
+  options: '-c search_path=foo',
+});
 test('postgresql://localhost/?&application_name=baz', testParse, {
   applicationName: 'baz',
   host: 'localhost',

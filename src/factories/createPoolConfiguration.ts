@@ -24,6 +24,7 @@ export const createPoolConfiguration = (dsn: string, clientConfiguration: Client
     port: connectionOptions.port,
     ssl: false,
     user: connectionOptions.username,
+    options: connectionOptions.options,
   };
 
   if (clientConfiguration.ssl) {

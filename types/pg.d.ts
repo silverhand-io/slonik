@@ -27,6 +27,7 @@ declare module 'pg' {
     parseInputDatesAsUTC?: boolean | undefined,
     password?: string | (() => Promise<string> | string) | undefined,
     port?: number | undefined,
+    options?: string | undefined,
     query_timeout?: number | undefined,
     ssl?: ConnectionOptions | boolean | undefined,
     statement_timeout?: number | false | undefined,
