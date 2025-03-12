@@ -13,6 +13,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ^20.9
+          registry-url: 'https://registry.npmjs.org'
       - name: setup node.js
         uses: silverhand-io/actions-node-pnpm-run-steps@v4
         with:
