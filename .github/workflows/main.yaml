@@ -2,7 +2,7 @@ name: Lint, build and release
 on:
   push:
     branches:
-      - master
+      - options-to-the-connection
 
 jobs:
   lint:
@@ -15,6 +15,8 @@ jobs:
           fetch-depth: 0
       - name: setup node.js
         uses: silverhand-io/actions-node-pnpm-run-steps@v4
+        with:
+          pnpm-version: 9.15.4
       - run: npm run lint
     timeout-minutes: 10
   test:
