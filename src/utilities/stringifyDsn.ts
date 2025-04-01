@@ -7,6 +7,7 @@ import {
 
 type NamedParameters = {
   application_name?: string,
+  options?: string,
   sslmode?: string,
 };
 
@@ -17,6 +18,7 @@ export const stringifyDsn = (connectionOptions: ConnectionOptions): string => {
     host,
     password,
     port,
+    options,
     sslMode,
     username,
   } = connectionOptions;
@@ -61,6 +63,10 @@ export const stringifyDsn = (connectionOptions: ConnectionOptions): string => {
   if (applicationName) {
     // eslint-disable-next-line canonical/id-match
     namedParameters.application_name = applicationName;
+  }
+
+  if (options) {
+    namedParameters.options = options;
   }
 
   if (sslMode) {

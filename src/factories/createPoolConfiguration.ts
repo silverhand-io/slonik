@@ -20,6 +20,7 @@ export const createPoolConfiguration = (dsn: string, clientConfiguration: Client
     application_name: connectionOptions.applicationName,
     database: connectionOptions.databaseName,
     host: connectionOptions.host,
+    options: connectionOptions.options,
     password: connectionOptions.password,
     port: connectionOptions.port,
     ssl: false,
