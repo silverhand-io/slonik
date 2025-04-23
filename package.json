@@ -34,7 +34,7 @@
     "p-defer": "^4.0.0",
     "pg": "^8.11.3",
     "pg-cursor": "^2.10.3",
-    "pg-protocol": "^1.6.0",
+    "pg-protocol": "1.8.0",
     "pg-types": "^4.0.2",
     "postgres-array": "^3.0.2",
     "postgres-interval": "^4.0.2",
