@@ -4,14 +4,14 @@
   "type": "module",
   "main": "./dist/src/index.js",
   "description": "A Node.js PostgreSQL client with strict types, detailed logging and assertions.",
-  "version": "31.0.0-beta.2",
+  "version": "31.0.0-beta.3",
   "files": [
     "./dist",
     "!./dist/test"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gajus/slonik"
+    "url": "https://github.com/silverhand-io/slonik"
   },
   "scripts": {
     "prepack": "pnpm build",
@@ -34,7 +34,7 @@
     "p-defer": "^4.0.0",
     "pg": "^8.11.3",
     "pg-cursor": "^2.10.3",
-    "pg-protocol": "^1.6.0",
+    "pg-protocol": "^1.9.5",
     "pg-types": "^4.0.2",
     "postgres-array": "^3.0.2",
     "postgres-interval": "^4.0.2",
