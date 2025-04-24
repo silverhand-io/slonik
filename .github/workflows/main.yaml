@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 10
   test:
     env:
-      TEST_ONLY_NON_INTEGRATION: "true"
+      TEST_ONLY_NON_INTEGRATION: 'true'
     runs-on: ubuntu-latest
     name: Test
     steps:
@@ -37,7 +37,7 @@ jobs:
     timeout-minutes: 10
   test-pg-integration:
     env:
-      TEST_ONLY_PG_INTEGRATION: "true"
+      TEST_ONLY_PG_INTEGRATION: 'true'
     services:
       postgres:
         image: postgres
@@ -69,7 +69,7 @@ jobs:
     timeout-minutes: 10
   test-postgres-integration:
     env:
-      TEST_ONLY_POSTGRES_INTEGRATION: "true"
+      TEST_ONLY_POSTGRES_INTEGRATION: 'true'
     services:
       postgres:
         image: postgres
