@@ -91,8 +91,8 @@ importers:
         specifier: ^42.8.1
         version: 42.8.3(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(@types/node@22.14.1)(eslint@8.57.1)(graphql@16.10.0)(typescript@5.8.3)
       expect-type:
-        specifier: ^0.13.0
-        version: 0.13.0
+        specifier: ^0.20.0
+        version: 0.20.0
       nyc:
         specifier: ^15.1.0
         version: 15.1.0
@@ -1853,8 +1853,9 @@ packages:
     resolution: {integrity: sha512-UduyVP7TLB5IcAQl+OzLyLcS/l32W/GLg+AhHJ+ow40FOk2U3SAllPwR44v4vmdFwIWqpdwxxpQbF1n5ta9seA==}
     engines: {node: ^14.18.0 || ^16.14.0 || >=18.0.0}
 
-  expect-type@0.13.0:
-    resolution: {integrity: sha512-CclevazQfrqo8EvbLPmP7osnb1SZXkw47XPPvUUpeMz4HuGzDltE7CaIt3RLyT9UQrwVK/LDn+KVcC0hcgjgDg==}
+  expect-type@0.20.0:
+    resolution: {integrity: sha512-uHaC9LYNv6BcW+8SvXcwUUDCrrUxt3GSa61DFvTHj8JC+M0hekMFBwMlCarLQDk5bbpZ2vStpnQPIwRuV98YMw==}
+    engines: {node: '>=12.0.0'}
 
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
@@ -6587,7 +6588,7 @@ snapshots:
       signal-exit: 3.0.7
       strip-final-newline: 3.0.0
 
-  expect-type@0.13.0: {}
+  expect-type@0.20.0: {}
 
   extend@3.0.2: {}
 

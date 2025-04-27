@@ -55,7 +55,7 @@
     "delay": "^6.0.0",
     "eslint": "^8.57.0",
     "eslint-config-canonical": "^42.8.1",
-    "expect-type": "^0.13.0",
+    "expect-type": "^0.20.0",
     "nyc": "^15.1.0",
     "pg-native": "^3.0.1",
     "postgres": "^3.4.3",
