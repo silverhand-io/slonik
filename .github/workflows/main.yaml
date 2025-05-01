@@ -10,7 +10,7 @@ jobs:
     name: Lint
     steps:
       - name: setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: setup node.js
@@ -26,7 +26,7 @@ jobs:
     name: Test
     steps:
       - name: setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: setup node.js
@@ -56,7 +56,7 @@ jobs:
     name: Test "pg" integration
     steps:
       - name: setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: setup node.js
@@ -88,7 +88,7 @@ jobs:
     name: Test "postgres" integration
     steps:
       - name: setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: setup node.js
@@ -109,7 +109,7 @@ jobs:
     name: Release
     steps:
       - name: setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: setup node.js
