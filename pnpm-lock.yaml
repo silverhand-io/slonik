@@ -67,8 +67,8 @@ importers:
         specifier: ^9.0.1
         version: 9.0.2(semantic-release@19.0.5)
       '@silverhand/ts-config':
-        specifier: ^5.0.0
-        version: 5.0.0(typescript@5.8.3)
+        specifier: ^6.0.0
+        version: 6.0.0(typescript@5.8.3)
       '@types/sinon':
         specifier: ^17.0.3
         version: 17.0.4
@@ -552,8 +552,8 @@ packages:
     peerDependencies:
       semantic-release: '>=18.0.0-beta.1'
 
-  '@silverhand/ts-config@5.0.0':
-    resolution: {integrity: sha512-KpX9b1Dsp6vm6xboEsi4P/g0HtRVYDW2dzYM4s2r3Gs0XnYRJjnURa9y8z3R4F96ax/gkqXOf6w+EAsp9P0/wg==}
+  '@silverhand/ts-config@6.0.0':
+    resolution: {integrity: sha512-zgR9vxC/DBx+0ZhCxqGTlZfVX6Bi0/UZztt+8np5I07ahfGMVUJjWedgHNK2NrSX2Nwclr9zLlUbgxwgqi4Idw==}
     engines: {node: ^20.9.0}
     peerDependencies:
       typescript: ^5.3.3
@@ -4933,7 +4933,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@silverhand/ts-config@5.0.0(typescript@5.8.3)':
+  '@silverhand/ts-config@6.0.0(typescript@5.8.3)':
     dependencies:
       typescript: 5.8.3
 
