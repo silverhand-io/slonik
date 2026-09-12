@@ -47,7 +47,7 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/github": "^8.0.5",
     "@semantic-release/npm": "^9.0.1",
-    "@silverhand/ts-config": "^5.0.0",
+    "@silverhand/ts-config": "^6.0.0",
     "@types/sinon": "^17.0.3",
     "@types/through2": "^2.0.36",
     "ava": "^5.0.0",
