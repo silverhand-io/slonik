@@ -28,6 +28,7 @@ jobs:
       - name: setup node.js
         uses: silverhand-io/actions-node-pnpm-run-steps@v5
         with:
+          node-version: 26
           pnpm-version: 10
       - run: npm run lint
     timeout-minutes: 10
@@ -42,6 +43,7 @@ jobs:
       - name: setup node.js
         uses: silverhand-io/actions-node-pnpm-run-steps@v5
         with:
+          node-version: 26
           pnpm-version: 10
       - run: npm run build
     timeout-minutes: 10
@@ -58,6 +60,7 @@ jobs:
       - name: setup node.js
         uses: silverhand-io/actions-node-pnpm-run-steps@v5
         with:
+          node-version: 26
           pnpm-version: 10
       - run: npm run test
     timeout-minutes: 10
@@ -88,6 +91,7 @@ jobs:
       - name: setup node.js
         uses: silverhand-io/actions-node-pnpm-run-steps@v5
         with:
+          node-version: 26
           pnpm-version: 10
       - run: npm run test
         env:
@@ -120,6 +124,7 @@ jobs:
       - name: setup node.js
         uses: silverhand-io/actions-node-pnpm-run-steps@v5
         with:
+          node-version: 26
           pnpm-version: 10
       - run: npm run test
         env:
