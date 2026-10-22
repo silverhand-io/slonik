@@ -25,6 +25,9 @@ jobs:
       TEST_ONLY_NON_INTEGRATION: 'true'
     runs-on: ubuntu-latest
     name: Test
+    strategy:
+      matrix:
+        node-version: ['20.9', '22', '24', '26']
     steps:
       - name: setup repository
         uses: actions/checkout@v2
@@ -33,7 +36,7 @@ jobs:
       - name: setup node.js
         uses: silverhand-io/actions-node-pnpm-run-steps@v5
         with:
-          node-version: 26
+          node-version: ${{ matrix.node-version }}
           pnpm-version: 10
       - run: npm run test
     timeout-minutes: 10
