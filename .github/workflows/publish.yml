@@ -30,6 +30,11 @@ jobs:
 
       # Publish the version bumped in the pull request. Skipping an existing
       # version keeps pushes that do not bump it from failing.
+      # `actions/setup-node` (via `actions-node-pnpm-run-steps`) sets
+      # `registry-url`, which writes `//registry.npmjs.org/:_authToken` to
+      # `.npmrc` and injects a placeholder `NODE_AUTH_TOKEN`. Delete that entry
+      # so npm CLI falls back to OIDC Trusted Publishing instead of sending a
+      # static token.
       - name: Publish to NPM
         env:
           NODE_AUTH_TOKEN: ''
