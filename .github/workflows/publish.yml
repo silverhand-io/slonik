@@ -9,7 +9,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
@@ -47,3 +47,5 @@ jobs:
             exit 0
           fi
           npm publish --tag latest
+          git tag "v$VERSION"
+          git push origin "v$VERSION"
