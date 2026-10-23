@@ -24,7 +24,7 @@ jobs:
     env:
       TEST_ONLY_NON_INTEGRATION: 'true'
     runs-on: ubuntu-latest
-    name: Test
+    name: Test matrix
     strategy:
       matrix:
         node-version: ['20.9', '22', '24', '26']
@@ -40,6 +40,21 @@ jobs:
           pnpm-version: 10
       - run: npm run test
     timeout-minutes: 10
+  # Branch protection requires a check named "Test". Matrix jobs report as
+  # "Test matrix (<node version>)", so this job aggregates them under that name.
+  test-gate:
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: check test matrix result
+        run: |
+          if [ "${{ needs.test.result }}" != "success" ]; then
+            echo "Test matrix did not succeed: ${{ needs.test.result }}"
+            exit 1
+          fi
+    timeout-minutes: 5
   test-pg-integration:
     env:
       TEST_ONLY_PG_INTEGRATION: 'true'
