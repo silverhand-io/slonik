@@ -1,0 +1,51 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish-to-npm:
+    if: github.ref == 'refs/heads/master'
+    environment: npm
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node and pnpm
+        uses: silverhand-io/actions-node-pnpm-run-steps@v5
+        with:
+          node-version: 26
+          pnpm-version: 10
+
+      - run: npm run build
+
+      # Publish the version bumped in the pull request. Skipping an existing
+      # version keeps pushes that do not bump it from failing.
+      # `actions/setup-node` (via `actions-node-pnpm-run-steps`) sets
+      # `registry-url`, which writes `//registry.npmjs.org/:_authToken` to
+      # `.npmrc` and injects a placeholder `NODE_AUTH_TOKEN`. Delete that entry
+      # so npm CLI falls back to OIDC Trusted Publishing instead of sending a
+      # static token.
+      - name: Publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ''
+        run: |
+          npm config delete //registry.npmjs.org/:_authToken || true
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "@silverhand/slonik@$VERSION" version >/dev/null 2>&1; then
+            echo "@silverhand/slonik@$VERSION is already published, skipping."
+            exit 0
+          fi
+          npm publish --tag latest
+          git tag "v$VERSION"
+          git push origin "v$VERSION"

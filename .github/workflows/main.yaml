@@ -121,26 +121,3 @@ jobs:
         env:
           POSTGRES_DSN: postgres:postgres@localhost:5432
     timeout-minutes: 10
-  release:
-    needs:
-      - lint
-      - test
-      - test-pg-integration
-      - test-postgres-integration
-    runs-on: ubuntu-latest
-    name: Release
-    steps:
-      - name: setup repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: setup node.js
-        uses: silverhand-io/actions-node-pnpm-run-steps@v5
-        with:
-          node-version: 26
-          pnpm-version: 10
-      - run: npm run build
-      - run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

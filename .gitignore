@@ -12,4 +12,3 @@ node_modules
 !.npmignore
 !.nvmrc
 !.README
-!.releaserc
