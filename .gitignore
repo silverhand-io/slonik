@@ -10,5 +10,6 @@ node_modules
 !.gitignore
 !.ncurc.js
 !.npmignore
+!.nvmrc
 !.README
 !.releaserc
